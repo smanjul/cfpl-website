@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 export default function Contact() {
   return (
     <>
-      <Navbar />
+  {/*<Navbar />*/}
 
       <main className="max-w-5xl mx-auto px-10 py-20">
         <h1 className="text-4xl font-semibold mb-6">Contact</h1>
