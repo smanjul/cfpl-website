@@ -1,0 +1,90 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Navbar from "@/components/Navbar";
+
+export default function Publications() {
+  const [papers, setPapers] = useState([]);
+
+  useEffect(() => {
+    fetch("/api/publications")
+      .then((res) => res.json())
+      .then((data) => {
+        // ✅ Sort by year (descending)
+        const sorted = data.sort((a, b) => (b.year || 0) - (a.year || 0));
+
+        // ✅ Compute featured based on citations
+        const maxCitations = Math.max(
+          ...sorted.map((p) => p.citations || 0),
+          0
+        );
+
+        const enhanced = sorted.map((p) => ({
+          ...p,
+          featured:
+            maxCitations > 0 && (p.citations || 0) > 0.6 * maxCitations,
+        }));
+
+        setPapers(enhanced);
+      })
+      .catch((err) => console.error("Fetch error:", err));
+  }, []);
+
+  return (
+    <>
+      <Navbar />
+
+      <main className="max-w-5xl mx-auto px-8 py-20 text-white">
+        <h1 className="text-4xl font-semibold mb-12 tracking-tight">
+          Publications
+        </h1>
+
+        <div className="space-y-8">
+          {papers.map((p, i) => (
+            <div
+              key={i}
+              className={`border-l-2 pl-6 transition duration-300
+                ${
+                  p.featured
+                    ? "border-blue-400"
+                    : "border-white/10 hover:border-white/30"
+                }`}
+            >
+              {/* Title */}
+              <a
+                href={p.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg font-medium text-black hover:text-blue-400 transition"
+              >
+                {p.title}
+              </a>
+
+              {/* Authors */}
+              <p className="text-gray-400 text-sm mt-2">
+                {Array.isArray(p.authors)
+                  ? p.authors.join(", ")
+                  : p.authors}
+              </p>
+
+              {/* Meta info */}
+              <div className="flex items-center gap-4 mt-2 text-sm">
+                <span className="text-gray-500">{p.year}</span>
+
+                <span className="text-yellow-400">
+                  📊 {p.citations || 0}
+                </span>
+
+                {p.featured && (
+                  <span className="text-blue-400 text-xs">
+                    ★ Featured
+                  </span>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </main>
+    </>
+  );
+}

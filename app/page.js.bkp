@@ -1,0 +1,135 @@
+"use client";
+
+import Navbar from "@/components/Navbar";
+import FlowField from "@/components/FlowField";
+//import VortexTubes from "@/components/VortexTubes";
+import ResearchCard from "@/components/ResearchCard";
+//import PublicationItem from "@/components/PublicationItem";
+//import { getRecentPublications } from "@/lib/getRecentPublications";
+
+		export default function Home() {
+  return (
+    <>
+      <Navbar />
+
+      {/* HERO */}
+      <section className="relative h-[80vh] flex items-center justify-center text-center overflow-hidden">
+        
+        <div className="absolute inset-0 -z-10">
+          <FlowField />
+	  {/*<VortexTubes /> */}
+        </div>
+
+        <div className="absolute inset-0 bg-black/40 -z-10" />
+
+        <div className="z-10 px-6">
+          <h1 className="text-5xl font-semibold mb-6 text-white">
+            Complex Flow Physics Lab
+          </h1>
+
+          <p className="text-lg text-gray-200 max-w-2xl mx-auto">
+            High-fidelity simulation of complex fluid systems
+          </p>
+        </div>
+      </section>
+
+      {/* ABOUT */}
+      <section className="max-w-6xl mx-auto px-10 py-20">
+        <h2 className="text-4xl font-semibold mb-6">About the Lab</h2>
+
+	  <p className="text-gray-700 leading-relaxed text-2xl">
+	  {/*<p className="text-gray-700 leading-relaxed text-xl max-w-3xl">*/}
+          The Complex Flow Physics Lab (CFPL) focuses on high-fidelity numerical
+          simulations of complex fluid systems, with emphasis on turbulence,
+          multiphysics interactions, and high-performance computing.
+        </p>
+
+	  {/*
+        <h3 className="text-2xl font-semibold mt-10 mb-4">
+          Principal Investigator
+        </h3>
+
+        <p className="text-gray-700 leading-relaxed">
+          Dr. Manjul Sharma is an Assistant Professor in Aerospace Engineering
+          at Mahindra University. He obtained his Ph.D. from IIT Madras and has
+          served as research faculty at the University of Colorado Boulder.
+          His research focuses on high-order numerical methods, turbulence,
+          multiphase flows, and GPU-accelerated solvers.
+        </p>
+	*/}
+      </section>
+
+      {/* RESEARCH */}
+<section className="max-w-6xl mx-auto px-10 py-20">
+  <h2 className="text-3xl font-semibold mb-10">Research</h2>
+
+  <div className="grid md:grid-cols-2 gap-8">
+    <ResearchCard
+      title="Direct Numerical Simulation (DNS)"
+      desc="High-order, high-fidelity simulations of turbulent flows using advanced numerical schemes."
+    />
+    <ResearchCard
+      title="Immersed Boundary Methods (IBM)"
+      desc="Accurate representation of complex geometries in incompressible flow solvers."
+    />
+    <ResearchCard
+      title="High-Performance Computing (HPC)"
+      desc="Scalable multi-GPU and MPI-based simulation frameworks."
+    />
+    <ResearchCard
+      title="Multiphysics & Multiphase Flows"
+      desc="Coupled transport, heat transfer, and interfacial phenomena."
+    />
+  </div>
+
+  {/* CTA BUTTON */}
+  <div className="mt-12 text-center">
+    <a
+      href="/research"
+      className="
+        inline-block px-8 py-3 rounded-lg
+
+        border border-[#B87333]
+        text-[#B87333]
+
+        hover:bg-[#B87333] hover:text-white
+
+        transition duration-300
+        font-medium tracking-wide
+      "
+    >
+      Learn More →
+    </a>
+  </div>
+</section>
+
+      {/* RECRUITMENT */}
+      <section className="bg-gray-50 py-20 px-10">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-semibold mb-6">Join the Lab</h2>
+
+          <p className="text-gray-700 mb-6">
+            We are actively looking for motivated PhD students and research
+            interns interested in computational fluid dynamics, turbulence,
+            and high-performance computing.
+          </p>
+
+          <ul className="list-disc ml-6 text-gray-700 space-y-2">
+            <li>Strong background in fluid mechanics</li>
+            <li>Experience with programming (Fortran/C++/Python)</li>
+            <li>Interest in HPC / GPU computing</li>
+          </ul>
+
+          <div className="mt-8">
+            <a
+              href="mailto:your-email@university.edu"
+              className="inline-block px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition"
+            >
+              Apply / Contact
+            </a>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

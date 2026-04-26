@@ -1,0 +1,43 @@
+import Navbar from "@/components/Navbar";
+
+const projects = [
+  {
+    title: "Direct Numerical Simulation (DNS)",
+    desc: "High-fidelity simulations of turbulent flows using high-order schemes and HPC frameworks.",
+  },
+  {
+    title: "Immersed Boundary Methods (IBM)",
+    desc: "Accurate handling of complex geometries in incompressible Navier–Stokes solvers.",
+  },
+  {
+    title: "High-Performance Computing (HPC)",
+    desc: "Scalable multi-GPU and MPI-based solvers for large-scale fluid simulations.",
+  },
+  {
+    title: "Multiphysics & Multiphase Flows",
+    desc: "Coupled transport phenomena including heat transfer and phase interactions.",
+  },
+];
+
+export default function Research() {
+  return (
+    <>
+      <Navbar />
+      <main className="px-10 py-16 max-w-7xl mx-auto">
+        <h1 className="text-4xl font-semibold mb-10">Research</h1>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+          {projects.map((p, i) => (
+            <div
+              key={i}
+              className="p-6 border rounded-2xl shadow-sm hover:shadow-lg transition"
+            >
+              <h2 className="text-xl font-semibold mb-3">{p.title}</h2>
+              <p className="text-gray-600">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+      </main>
+    </>
+  );
+}

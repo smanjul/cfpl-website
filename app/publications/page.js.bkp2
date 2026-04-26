@@ -1,0 +1,113 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Navbar from "@/components/Navbar";
+import bibtexParse from "bibtex-parse-js";
+
+function clean(str) {
+  if (!str) return "";
+  return str.replace(/[{}]/g, "");
+}
+
+const TAGS = {
+  vishnu2021effect: ["Editor's Pick"],
+  sharma2023near: ["Invited"],
+  dhurandhar2026compressibility: ["Featured article"],
+};
+
+export default function Publications() {
+  const [groupedPapers, setGroupedPapers] = useState(null);
+
+  useEffect(() => {
+    fetch("/data/publications.bib")
+      .then((res) => res.text())
+      .then((bibtex) => {
+        const parsed = bibtexParse.toJSON(bibtex);
+
+        const papers = parsed.map((entry) => {
+          const tags = entry.entryTags;
+
+          return {
+            id: entry.citationKey,
+            authors: clean(tags.author),
+            title: clean(tags.title),
+            year: parseInt(tags.year) || 0,
+            venue: clean(tags.journal || tags.booktitle || ""),
+          };
+        });
+
+        const sorted = papers.sort((a, b) => {
+          if (b.year !== a.year) return b.year - a.year;
+          return a.title.localeCompare(b.title);
+        });
+
+        const grouped = {};
+        sorted.forEach((p) => {
+          const year = p.year || "Unknown";
+          if (!grouped[year]) grouped[year] = [];
+          grouped[year].push(p);
+        });
+
+        setGroupedPapers(grouped);
+      });
+  }, []);
+
+  // ✅ NEW: total count
+  const totalPapers = groupedPapers
+    ? Object.values(groupedPapers).flat().length
+    : 0;
+
+  let runningIndex = 0;
+
+  return (
+    <>
+      <Navbar />
+
+      <main className="max-w-5xl mx-auto px-8 py-20 text-black bg-white">
+        <h1 className="text-4xl font-semibold mb-12 tracking-tight">
+          Journal Publications
+        </h1>
+
+        {!groupedPapers ? (
+          <p>Loading...</p>
+        ) : (
+          <div className="space-y-12">
+            {Object.keys(groupedPapers)
+              .sort((a, b) => {
+                if (a === "Unknown") return 1;
+                if (b === "Unknown") return -1;
+                return Number(b) - Number(a);
+              })
+              .map((year) => (
+                <div key={year}>
+                  <h2 className="text-2xl text-blue-600 mb-6">{year}</h2>
+
+                  {groupedPapers[year].map((p, i) => {
+                    // ✅ Reverse numbering
+                    const index = totalPapers - runningIndex;
+                    runningIndex++;
+
+                    return (
+                      <div key={i} className="flex gap-4">
+                        <span>[{index}]</span>
+
+                        <p>
+                          {p.authors},{" "}
+                          “{p.title},” <em>{p.venue}</em>, {p.year}.
+                          {TAGS[p.id] && (
+                            <span className="ml-2 text-red-600">
+                              ({TAGS[p.id].join(", ")})
+                            </span>
+                          )}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
+              ))}
+          </div>
+        )}
+      </main>
+    </>
+  );
+}
