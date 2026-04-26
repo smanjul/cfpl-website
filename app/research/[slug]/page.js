@@ -1,3 +1,12 @@
+export function generateStaticParams() {
+  return [
+    { slug: "high-order-cfd" },
+    { slug: "turbulence" },
+    { slug: "immersed-boundary" },
+    { slug: "multiphase" },
+  ];
+}
+
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import { BlockMath } from "react-katex";
@@ -118,7 +127,7 @@ const data = {
 };
 
 export default async function ResearchDetail({ params }) {
-  const { slug } = await params;
+  const { slug } = params;
   const page = data[slug];
 
   if (!page) {
