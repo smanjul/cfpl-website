@@ -18,7 +18,7 @@ const grants = [
 export default function Funding() {
   return (
     <>
-      <Navbar />
+      {/*<Navbar />*/}
 
       <main className="max-w-5xl mx-auto px-10 py-20">
         <h1 className="text-4xl font-semibold mb-12">Funding</h1>
