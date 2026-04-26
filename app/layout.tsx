@@ -62,14 +62,20 @@ export default function RootLayout({
       <body className={`${inter.className} min-h-full flex flex-col`}>
         <Navbar />
         {/* Google Analytics */}
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G1G060YJS6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<Script
+  src="https://www.googletagmanager.com/gtag/js?id=G-G1G060YJS6"
+  strategy="afterInteractive"
+/>
 
-  gtag('config', 'G-G1G060YJS6');
-</script>
+<Script id="google-analytics" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-G1G060YJS6');
+  `}
+</Script>
 
         {children}
       </body>
