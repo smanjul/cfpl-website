@@ -1,4 +1,4 @@
-//import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar";
 import FlowField from "@/components/FlowField";
 import ResearchCard from "@/components/ResearchCard";
 import PublicationItem from "@/components/PublicationItem";
