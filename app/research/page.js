@@ -29,7 +29,7 @@ const researchAreas = [
 export default function Research() {
   return (
     <>
-      <Navbar />
+      {/*<Navbar />*/}
 
       <main className="max-w-6xl mx-auto px-10 py-24 bg-gradient-to-br from-gray-50 to-white">
 
