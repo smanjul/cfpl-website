@@ -7,7 +7,7 @@ import CourseItem from "@/components/CourseItem";
 export default function Teaching() {
   return (
     <>
-      <Navbar />
+      {/*<Navbar />*/}
 
       <main className="max-w-5xl mx-auto px-10 py-20">
 
