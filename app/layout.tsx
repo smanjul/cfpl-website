@@ -29,7 +29,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-RSVQ20P25M');
+            gtag('config', 'G-G1G060YJS6');
           `}
         </Script>
         {children}
