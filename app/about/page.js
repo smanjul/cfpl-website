@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function About() {
   return (
     <>
-      <Navbar />
+  {/*<Navbar />*/}
 
       <main className="max-w-6xl mx-auto px-10 py-20">
         
