@@ -68,7 +68,7 @@ export default function Publications() {
 
   return (
     <>
-      <Navbar />
+      {/*<Navbar />*/}
 
       <main className="max-w-5xl mx-auto px-8 py-20 text-black bg-white">
         <h1 className="text-4xl font-semibold mb-12">Journal Publications</h1>
