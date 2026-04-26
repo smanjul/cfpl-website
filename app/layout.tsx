@@ -20,7 +20,6 @@ export default function RootLayout({
       <body className={`${inter.className} min-h-full flex flex-col`}>
         <Navbar />
         {/* Google Analytics */}
-        <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-G1G060YJS6"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
