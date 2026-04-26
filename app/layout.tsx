@@ -20,17 +20,16 @@ export default function RootLayout({
       <body className={`${inter.className} min-h-full flex flex-col`}>
         <Navbar />
         {/* Google Analytics */}
-        <Script id="ga" strategy="afterInteractive">
-{`
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G1G060YJS6"></script>
+<script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  window.gtag = gtag;
   gtag('js', new Date());
-  gtag('config', 'G-G1G060YJS6', {
-    anonymize_ip: true
-  });
-`}
-</Script>
+
+  gtag('config', 'G-G1G060YJS6');
+</script>
+
         {children}
       </body>
     </html>
