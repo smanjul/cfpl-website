@@ -21,7 +21,7 @@ export default function RootLayout({
         <Navbar />
         {/* Google Analytics */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-G1G060YJS6"
+          src="https://www.googletagmanager.com/gtag/js?id=G-RSVQ20P25M"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -29,7 +29,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-G1G060YJS6');
+            gtag('config', 'G-RSVQ20P25M');
           `}
         </Script>
         {children}
