@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 export default function People() {
   return (
     <>
-      <Navbar />
+      {/*<Navbar />*/}
 
       <main className="max-w-6xl mx-auto px-10 py-20">
         <h1 className="text-4xl font-semibold mb-12">People</h1>
