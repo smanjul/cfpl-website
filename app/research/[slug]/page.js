@@ -136,7 +136,7 @@ export default async function ResearchDetail({ params }) {
 
   return (
     <>
-      <Navbar />
+      {/*<Navbar />*/}
 
       <main className="max-w-4xl mx-auto px-10 py-20">
 
