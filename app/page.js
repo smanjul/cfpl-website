@@ -20,11 +20,11 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/40 -z-10" />
 
         <div className="z-10 px-6">
-          <h1 className="text-5xl font-semibold mb-6 text-white">
+          <h1 className="text-9xl font-semibold mb-6 text-white">
             Complex Flow Physics Lab
           </h1>
 
-          <p className="text-lg text-gray-200 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-200 max-w-5xl mx-auto">
             High-fidelity simulation of complex fluid systems
           </p>
         </div>
