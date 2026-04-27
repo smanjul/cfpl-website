@@ -24,7 +24,7 @@ export default function Home() {
             Complex Flow Physics Lab
           </h1>
 
-          <p className="text-5xl text-gray-200 max-w-5xl mx-auto">
+          <p className="text-5xl text-gray-200 max-w-3xl mx-auto">
             High-fidelity simulation of complex fluid systems
           </p>
         </div>
