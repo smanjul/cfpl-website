@@ -107,7 +107,7 @@ export default function Home() {
           <h2 className="text-3xl font-semibold mb-6">Join the Lab</h2>
 
           <p className="text-gray-700 mb-6">
-            We are actively looking for motivated PhD students and research
+            We are actively looking for motivated postdoctoral fellows, PhD students, and research
             interns interested in computational fluid dynamics, turbulence,
             and high-performance computing.
           </p>
