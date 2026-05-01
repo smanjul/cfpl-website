@@ -22,20 +22,18 @@ export default function RootLayout({
 
         {/* ✅ Google Analytics */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-G1G060YJS6"
-          strategy="afterInteractive"
-        />
+  src="https://www.googletagmanager.com/gtag/js?id=G-G1G060YJS6"
+  strategy="afterInteractive"
+/>
         <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            window.gtag = gtag;
-            gtag('js', new Date());
-            gtag('config', 'G-G1G060YJS6', {
-              page_path: window.location.pathname,
-            });
-          `}
-        </Script>
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-G1G060YJS6');
+  `}
+</Script>
 
         {children}
       </body>
