@@ -18,10 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} min-h-full flex flex-col`}>
-        
         <Navbar />
 
-        {/* Google Analytics */}
+        {/* ✅ Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-G1G060YJS6"
           strategy="afterInteractive"
@@ -32,7 +31,9 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             window.gtag = gtag;
             gtag('js', new Date());
-            gtag('config', 'G-G1G060YJS6');
+            gtag('config', 'G-G1G060YJS6', {
+              page_path: window.location.pathname,
+            });
           `}
         </Script>
 
