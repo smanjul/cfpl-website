@@ -89,13 +89,13 @@ export default function Navbar() {
               <Link href="/about" className="block px-5 py-3 text-gray-800 hover:bg-gray-50">
                 About
               </Link>
-              <Link href="/people" className="block px-5 py-3 hover:bg-gray-50">
+              <Link href="/people" className="block px-5 py-3 text-gray-800 hover:bg-gray-50">
                 People
               </Link>
-              <Link href="/opportunities" className="block px-5 py-3 hover:bg-gray-50">
+              <Link href="/opportunities" className="block px-5 py-3 text-gray-800 hover:bg-gray-50">
                 Opportunities
               </Link>
-              <Link href="/funding" className="block px-5 py-3 hover:bg-gray-50">
+              <Link href="/funding" className="block px-5 py-3 text-gray-800 hover:bg-gray-50">
                 Funding
               </Link>
             </div>
