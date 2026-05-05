@@ -86,7 +86,7 @@ export default function Navbar() {
                   : "opacity-0 translate-y-2 pointer-events-none"
               }`}
             >
-              <Link href="/about" className="block px-5 py-3 hover:bg-gray-50">
+              <Link href="/about" className="block px-5 py-3 text-gray-800 hover:bg-gray-50">
                 About
               </Link>
               <Link href="/people" className="block px-5 py-3 hover:bg-gray-50">
