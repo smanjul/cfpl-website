@@ -5,7 +5,7 @@ const grants = [
     title: "GPU-Accelerated Machine-Learning Framework for Direct Numerical Simulation and Reduced-Order Modelling of Salt-Finger Convection",
     agency: "ANRF-PMECRG",
     duration: "2026 – 2029",
-    amount: "₹ 5.79 million",
+    amount: "₹ 6 million",
   },
 //  {
 //    title: "Turbulence and vortex dynamics in high-speed flows",
