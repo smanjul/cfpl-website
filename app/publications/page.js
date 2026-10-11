@@ -9,6 +9,23 @@ function clean(str) {
   return str.replace(/[{}]/g, "");
 }
 
+function formatAuthors(authors) {
+  if (!authors) return null;
+
+  // Match your name without regard to capitalization
+  const parts = authors.split(/(Manjul Sharma)/gi);
+
+  return parts.map((part, index) =>
+    part.toLowerCase() === "manjul sharma" ? (
+      <strong key={index} className="font-bold text-black">
+        {part}
+      </strong>
+    ) : (
+      part
+    )
+  );
+}
+
 const TAGS = {
   vishnu2021effect: ["Editor's Pick"],
   sharma2023near: ["Invited"],
@@ -98,8 +115,9 @@ export default function Publications() {
                         </span>
 
                         <p className="leading-relaxed">
-                          {/* Authors */}
-                          {p.authors},{" "}
+                          {/* Authors: bold Manjul Sharma */}
+                          {formatAuthors(p.authors)}
+                          {", "}
 
                           {/* Title */}
                           “{p.title},”{" "}
