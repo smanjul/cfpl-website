@@ -17,12 +17,7 @@ export default function PublicationItem({
       {/* AUTHORS */}
       <p
         className="text-gray-700 text-sm mt-2"
-        dangerouslySetInnerHTML={{
-          __html: authors.replace(
-            /Manjul Sharma/gi,
-            "<strong>Manjul Sharma</strong>"
-          ),
-        }}
+        dangerouslySetInnerHTML={{ __html: authors }}
       />
 
       {/* JOURNAL */}

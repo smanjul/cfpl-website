@@ -73,7 +73,7 @@ export default function Navbar() {
                   : "text-gray-600 hover:text-black"
               }`}
             >
-              Group
+              Lab
               <span className={`transition-transform ${open ? "rotate-180" : ""}`}>
                 ▾
               </span>

@@ -26,11 +26,24 @@ export default function Home() {
           </h1>
 
 	{/* <p className="text-4xl text-gray-200 max-w-3xl mx-auto"> */}
-		  <p className="text-4xl text-gray-200 whitespace-nowrap overflow-hidden text-ellipsis">
+		  <p className="text-4xl text-gray-200 max-w-3xl mx-auto">
             High-fidelity simulation of complex fluid systems
           </p>
         </div>
       </section>
+
+      {/* ANRF GRANT CALLOUT */}
+      <div className="bg-amber-50 border-y border-amber-200 py-4 px-10">
+        <div className="max-w-6xl mx-auto flex flex-wrap items-center gap-3">
+          <span className="text-amber-600 text-lg">🏆</span>
+          <p className="text-amber-900 text-sm font-medium flex-1">
+            <strong>ANRF-PMECRG 2026</strong> — GPU-Accelerated Machine-Learning Framework for DNS of Salt-Finger Convection (₹6M, 2026–2029)
+          </p>
+          <a href="/funding" className="text-sm text-amber-700 underline hover:text-amber-900 whitespace-nowrap font-medium">
+            View Funding →
+          </a>
+        </div>
+      </div>
 
       {/* ABOUT */}
       <section className="max-w-6xl mx-auto px-10 py-20">
@@ -102,7 +115,7 @@ export default function Home() {
 
 
       {/* RECRUITMENT */}
-      <section className="bg-gray-50 py-20 px-10">
+      <section className="bg-white py-20 px-10">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-semibold mb-6">Join the Lab</h2>
 

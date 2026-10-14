@@ -33,8 +33,34 @@ export default function About() {
             </p>
 
             <p className="text-gray-500 mt-2">
-              Ecole Centrale School of Engineering, Mahindra University, Hyderabad
+              École Centrale School of Engineering, Mahindra University, Hyderabad
             </p>
+
+            {/* Professional links */}
+            <div className="flex gap-4 mt-4 text-sm">
+              <a
+                href="https://scholar.google.com/citations?user=O0spKioAAAAJ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-3 py-1 rounded-md border border-gray-300 text-gray-600 hover:border-[#B87333] hover:text-[#B87333] transition"
+              >
+                Google Scholar
+              </a>
+              <a
+                href="https://orcid.org/0000-0003-1845-2585"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-3 py-1 rounded-md border border-gray-300 text-gray-600 hover:border-[#B87333] hover:text-[#B87333] transition"
+              >
+                ORCID
+              </a>
+              <a
+                href="mailto:manjul.sharma@mahindrauniversity.edu.in"
+                className="px-3 py-1 rounded-md border border-gray-300 text-gray-600 hover:border-[#B87333] hover:text-[#B87333] transition"
+              >
+                Email
+              </a>
+            </div>
           </div>
         </div>
 
@@ -78,25 +104,35 @@ export default function About() {
               <strong>Ph.D., Aerospace Engineering</strong> — IIT Madras
             </p>
 
-           <p>
-              <strong>Assistant Professor</strong> — Mahindra University
-              <span className="text-gray-500"> (May 2025 – )</span>
+            <p>
+              <strong>M.S., Aerospace Engineering</strong> — IIT Madras
             </p>
 
             <p>
-              <strong>Project Scientist I</strong> — IIT Madras  
-              <span className="text-gray-500"> (Aug 2024 – Apr 2025)</span>
+              <strong>B.E., Aeronautical Engineering</strong> — The Aeronautical Society of India
             </p>
 
-            <p>
-              <strong>Research Faculty</strong> — University of Colorado, Boulder  
-              <span className="text-gray-500"> (Aug 2021 – Jul 2024)</span>
-            </p>
+            <div className="border-t border-gray-200 pt-4 mt-4 space-y-4">
+              <p>
+                <strong>Assistant Professor</strong> — Mahindra University
+                <span className="text-gray-500"> (May 2025 – present)</span>
+              </p>
 
-            <p>
-              <strong>Postdoctoral Researcher</strong> — IIT Madras  
-              <span className="text-gray-500"> (Sep 2020 – Jul 2021)</span>
-            </p>
+              <p>
+                <strong>Project Scientist I</strong> — IIT Madras
+                <span className="text-gray-500"> (Aug 2024 – Apr 2025)</span>
+              </p>
+
+              <p>
+                <strong>Research Faculty</strong> — University of Colorado, Boulder
+                <span className="text-gray-500"> (Aug 2021 – Jul 2024)</span>
+              </p>
+
+              <p>
+                <strong>Postdoctoral Researcher</strong> — IIT Madras
+                <span className="text-gray-500"> (Sep 2020 – Jul 2021)</span>
+              </p>
+            </div>
           </div>
         </section>
 

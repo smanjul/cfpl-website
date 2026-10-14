@@ -39,8 +39,12 @@ export default function People() {
         <section>
           <h2 className="text-2xl font-semibold mb-6">Students</h2>
 
-          <p className="text-gray-600">
-            (Add PhD, M.Tech, B.Tech students here)
+          <p className="text-gray-500 italic">
+            The lab is actively recruiting PhD students and research interns. See{" "}
+            <a href="/opportunities" className="text-[#B87333] underline hover:opacity-80">
+              Opportunities
+            </a>{" "}
+            for open positions.
           </p>
         </section>
       </main>
